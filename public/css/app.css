@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Variables */
+:root {
+    --gold: #d4af37;
+    --dark: #212529;
+    --border-color: #dee2e6;
+    --card-bg: #ffffff;
+}
+
+/* General Body and Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h5 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.372)), 
+                url('../images/pexels-pixabay-260922.jpg') center/cover no-repeat fixed;
+    color: white;
+    padding: 150px 20px;
+    text-align: center;
+    position: relative;
+}
+.hero-section .btn {
+    border-radius: 30px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+.hero-section .btn:hover {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+/* Category Buttons */
+.category-btn {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.category-btn.active {
+    background-color: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+.category-btn:hover {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+/* Meal Cards - Simple, Clean & Professional (بدون أي animation أو hover مبالغ فيه) */
+.meal-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.meal-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--gold);
+}
+
+.meal-img {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* زر Order - simple ومحترم */
+.order-btn {
+    background-color: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    border-radius: 30px;
+    padding: 10px 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: var(--gold);
+    color: white;
+}
+
+/* الباقي بدون تغيير تمامًا */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 0;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h4 {
+    padding: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+.sidebar .nav-link {
+    color: #ecf0f1;
+    padding: 15px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-left: 5px solid transparent;
+}
+.sidebar .nav-link:hover {
+    background-color: #34495e;
+    color: #ffffff;
+    border-left-color: #3498db;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 20px 30px;
+    width: calc(100% - 250px);
+}
+
+.content-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.sidebar .btn-danger .btn-primary {
+    width: calc(100% - 40px);
+    margin: 20px 20px 10px 20px;
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+}
+.sidebar .btn-danger:hover .btn-primary {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+footer {
+    background-color: #212529;
+    color: white;
+    padding: 50px 0 20px;
+}
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+footer p {
+    color: #ccc;
+}
+footer .border-top {
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 100px 20px;
+    }
+    .meal-img {
+        height: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        display: none;
+    }
+    .content-area {
+        width: 100%;
+        padding: 15px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .price {
+        font-size: 1.2rem;
+    }
+    .hero-section {
+        padding: 80px 15px;
+    }
+}
